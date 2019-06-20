@@ -46,6 +46,7 @@
 {% endif %}
 
   SSLEngine on
+{# We use only LE via mod_md 
   SSLCipherSuite {{ apache_ssl_cipher_suite }}
   SSLProtocol {{ apache_ssl_protocol }}
   SSLHonorCipherOrder On
@@ -57,6 +58,7 @@
 {% if vhost.certificate_chain_file is defined %}
   SSLCertificateChainFile {{ vhost.certificate_chain_file }}
 {% endif %}
+#}
 
 {% if vhost.serveradmin is defined %}
   ServerAdmin {{ vhost.serveradmin }}
